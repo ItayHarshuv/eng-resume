@@ -1,24 +1,23 @@
 import { ReactElement } from "react";
+import { Time } from "./utility/time";
 
 type Renderable = string | ReactElement;
 
-type Time =
-  | {
-      year: number;
-      month: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-    }
-  | "present";
-
-type Entry = {
+export type Entry = {
   title: string;
   subtitle: string;
-  time:
+  timeframe:
     | {
         start: Time;
         end: Time;
       }
     | Time;
   content: Renderable | Renderable[]; // array will use ul
+};
+
+export type Section = {
+  title: string;
+  content: Entry[] | string[]; // string[] will use badges
 };
 
 export const content: {
@@ -31,13 +30,10 @@ export const content: {
     address: string;
     github: string;
   };
-  sections: {
-    title: string;
-    content: Entry[] | string[]; // string[] will use badges
-  }[];
+  sections: Section[];
 } = {
   name: "Clay Herzberg",
-  title: "Sr. Web Developer",
+  title: "Sr. Front-End Web Developer",
   about: (
     <>
       <p>
@@ -45,31 +41,25 @@ export const content: {
         TypeScript, GraphQL and other modern web technologies.
       </p>
       <p>
-        I have experience designing and building new solutions, maintaining
-        large code bases, taking part in design and code reviews for both senior
-        and junior co-workers, SCRUM agile team management and product
-        requirements and close work with product managers and product
-        requirements. {/*TODO: consider giving quantifiable examples*/}
-      </p>
-      <p>
-        I love innovating and finding better ways to solve problems, investing
-        time in developer experience, while improving productivity and stability
-        of code. Through my years working as a developer, I've worked on various
+        I love innovating and finding better ways to solve problems, emphasizing
+        both developer and user experience, while improving productivity and
+        stability of code.
+        {/*Through my years working as a developer, I've worked on various
         such tools, such as GraphQL query to typed-code in TS generation,
         automated code refactoring tools, improved typings for existing
-        libraries ect.
+        libraries ect.*/}
       </p>
-      <p>
-        I'm a strong believer in the Functional Programming paradigm, since it
-        makes it so much easier to reuse, expand and test code. This is why I'm
-        a big fan of react and specifically react hooks.{" "}
-        {/*TODO: consider giving real world examples*/}
-      </p>
-      <p>
-        I'm looking for my next challenge in an aspiring and innovative work
-        environment, where I can both learn from others and contribute from my
-        knowledge and expertise.
-      </p>
+      {/*<p>*/}
+      {/*  I'm a strong believer in the Functional Programming paradigm, since it*/}
+      {/*  makes it so much easier to reuse, expand and test code. This is why I'm*/}
+      {/*  a big fan of react and specifically react hooks.{" "}*/}
+      {/*  /!*TODO: consider giving real world examples*!/*/}
+      {/*</p>*/}
+      {/*<p>*/}
+      {/*  I'm looking for my next challenge in an aspiring and innovative work*/}
+      {/*  environment, where I can both learn from others and contribute from my*/}
+      {/*  knowledge and expertise.*/}
+      {/*</p>*/}
     </>
   ),
   contact: {
@@ -85,7 +75,7 @@ export const content: {
         {
           title: "Sr. Front-End Tech-Lead",
           subtitle: "Quotient Technology Inc.",
-          time: {
+          timeframe: {
             start: {
               month: 11,
               year: 2019,
@@ -132,7 +122,7 @@ export const content: {
         {
           title: "Front-End Developer",
           subtitle: "Ubimo",
-          time: {
+          timeframe: {
             start: {
               month: 11,
               year: 2018,
@@ -162,7 +152,7 @@ export const content: {
         {
           title: "OpenEar (Founder)",
           subtitle: "Ear training app for musicians",
-          time: {
+          timeframe: {
             start: {
               month: 11,
               year: 2021,
@@ -200,7 +190,7 @@ export const content: {
         {
           title: "Reactive Forms",
           subtitle: "A library for Angular forms",
-          time: {
+          timeframe: {
             month: 10,
             year: 2010,
           },
@@ -220,7 +210,7 @@ export const content: {
         {
           title: "B.A. in Computer Science",
           subtitle: "University of Haifa",
-          time: {
+          timeframe: {
             start: {
               month: 6,
               year: 2014,
@@ -241,7 +231,7 @@ export const content: {
         {
           title: "The Program for Talented Youth in Math",
           subtitle: "Bar-Ilan University, Tel-Aviv",
-          time: {
+          timeframe: {
             start: {
               month: 9,
               year: 2012,
@@ -264,7 +254,7 @@ export const content: {
         {
           title: "High School",
           subtitle: "The Hebrew Reali School in Haifa",
-          time: {
+          timeframe: {
             start: {
               month: 9,
               year: 2014,
@@ -287,18 +277,20 @@ export const content: {
     {
       title: "Technologies",
       content: [
-        'React',
-        'Angular',
-        'TypeScript',
-        'RxJS',
-        'HTML',
-        'SCSS',
-        'Tailwindcss',
-        'styled-components',
-        'Formik',
-        'nodejs',
-        'Ionic',
-        'MongoDB'
+        "React",
+        "Angular",
+        "TypeScript",
+        "GraphQL",
+        "MongoDB",
+        "RxJS",
+        "HTML",
+        "SCSS",
+        "Tailwindcss",
+        "styled-components",
+        "Formik",
+        "nodejs",
+        "Ionic",
+        "MongoDB",
       ],
     },
     // {
