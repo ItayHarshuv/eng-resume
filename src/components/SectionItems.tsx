@@ -15,6 +15,7 @@ export function SectionItems({ children }: { children: Entry[] }) {
 
 const Title = styled.h4`
   font-size: 1.2rem;
+  margin-top: 0.3rem;
   margin-bottom: 0.3rem;
 `;
 const Subtitle = styled.h5`

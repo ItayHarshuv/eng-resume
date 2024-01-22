@@ -3,19 +3,21 @@ import styled from "styled-components";
 import { Badges } from "./Badges";
 import { SectionItems } from "./SectionItems";
 import { primary } from "../palette";
+import { Keywords } from './Keywords';
 
 const SectionTitle = styled.h3`
   text-transform: uppercase;
   color: ${primary};
   font-weight: 500;
   font-size: 1.5rem;
-  margin: 0.7rem 0;
+  margin: 1rem 0;
 `;
 
 export function Section(section: SectionType) {
   return (
     <>
       <SectionTitle>{section.title}</SectionTitle>
+      <Keywords>{section.keywords ?? []}</Keywords>
       {getSectionContent(section.content)}
     </>
   );

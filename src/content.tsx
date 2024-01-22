@@ -8,9 +8,9 @@ export type Entry = {
   subtitle: string;
   timeframe:
     | {
-        start: Time;
-        end: Time;
-      }
+    start: Time;
+    end: Time;
+  }
     | Time;
   content: Renderable | Renderable[]; // array will use ul
 };
@@ -18,11 +18,13 @@ export type Entry = {
 export type Section = {
   title: string;
   content: Entry[] | string[]; // string[] will use badges
+  keywords?: string[];
 };
 
 export const content: {
   name: string;
   title: string;
+  keywords: string[];
   about: string | ReactElement;
   contact: {
     email: string;
@@ -30,25 +32,29 @@ export const content: {
     address: string;
     github: string;
   };
-  sections: Section[];
+  columns: [Section[], Section[]];
 } = {
   name: "Clay Herzberg",
   title: "Sr. Front-End Web Developer",
+  keywords: ["Full Stack Developer", "Senior", "Tech Lead", "Engineer"],
   about: (
     <>
       <p>
-        I'm a skilled Front-End web developer with experience in React, Angular,
-        TypeScript, GraphQL and other modern web technologies.
+        After graduating a talented youth program with a B.A. in Computer Science at age of 19, Clay has had 6 years of experience in the Front-End world with different technologies including React, Angular,
+        TypeScript, GraphQL and others. He loves the web and finding ways to improve DX and streamline productivity.
+        As a tech-lead, he's managed SCRUM teams, led architectural designs and development for client-side web
+        applications, as well as mentored and reviewed work by junior
+        developers.
       </p>
-      <p>
-        I love innovating and finding better ways to solve problems, emphasizing
-        both developer and user experience, while improving productivity and
-        stability of code.
-        {/*Through my years working as a developer, I've worked on various
-        such tools, such as GraphQL query to typed-code in TS generation,
-        automated code refactoring tools, improved typings for existing
-        libraries ect.*/}
-      </p>
+      {/*<p>*/}
+      {/*  He loves innovating and finding better ways to solve problems, emphasizing*/}
+      {/*  both developer and user experience, while improving productivity and*/}
+      {/*  stability of code.*/}
+      {/*  /!*Through my years working as a developer, I've worked on various*/}
+      {/*   such tools, such as GraphQL query to typed-code in TS generation,*/}
+      {/*   automated code refactoring tools, improved typings for existing*/}
+      {/*   libraries ect.*!/*/}
+      {/*</p>*/}
       {/*<p>*/}
       {/*  I'm a strong believer in the Functional Programming paradigm, since it*/}
       {/*  makes it so much easier to reuse, expand and test code. This is why I'm*/}
@@ -65,237 +71,177 @@ export const content: {
   contact: {
     email: "clay.herzberg@gmail.com",
     phone: 3322519964,
-    address: "Manhattan, New York",
+    address: "New York City, USA",
     github: "ShacharHarshuv",
   },
-  sections: [
-    {
-      title: "Work experience",
-      content: [
-        {
-          title: "Sr. Front-End Tech-Lead",
-          subtitle: "Quotient Technology Inc.",
-          timeframe: {
-            start: {
-              month: 11,
-              year: 2019,
+  columns: [
+    [
+      {
+        title: "Work experience",
+        content: [
+          {
+            title: "Front-End Developer",
+            subtitle: "Ubimo, A Quotient Brand",
+            timeframe: {
+              start: {
+                month: 11,
+                year: 2018,
+              },
+              end: 'present'
             },
-            end: "present",
+            content: [
+              <>
+                Led the development of client-side web applications using ever-evolving modern
+                Web technology.
+              </>,
+              <>
+                Relocated from Tel-Aviv to help integrate the New York City
+                system into the main platform.
+              </>,
+              <>
+                Developed various generic development tools to increase team
+                productivity and code stability
+              </>,
+              <>
+                Helped rebuilt a generic OOH-Planning platform from scratch in a
+                team of two developers as well as maintaining and enhancing a
+                large scale self-service DSP for running campaign on media
+              </>,
+              <>Worked closely with product managers and stakeholders</>,
+              <>Was part of two acquisitions</>
+            ],
           },
-          content: [
-            <>
-              Led the development of client-side web applications using Angular
-              with Typescript, RxJS, lodash and other tools.
-            </>,
-            <>
-              Conducted code and design reviews, providing constructive feedback
-              to junior developers to improve code quality and maintainability.
-            </>,
-            <>
-              Mentored junior developers, providing guidance on coding best
-              practices and troubleshooting techniques.
-            </>,
-            <>Led a SCRUM (Social CRM) agile team.</>,
-            <>
-              Relocated from Tel-Aviv to help integrate the New York City system
-              into the main platform.
-            </>,
-            <>
-              Improved runtime performance in various features of the platform,
-              including very difficult, CPU-intensive flows.
-            </>,
-            <>
-              Worked closely with product managers and stakeholders to
-              understand project requirements and ensure the final product met
-              user needs.
-            </>,
-            <>
-              Developed various generic development tools to increase team
-              productivity and code stability, including GQL query to
-              typed-executable code generation, strictly typed forms solution,
-              AST-based solution for programmatic refactoring of code, and
-              various utilities for the testing library Jasmine for specific
-              use-cases.
-            </>,
-          ],
-        },
-        {
-          title: "Front-End Developer",
-          subtitle: "Ubimo",
-          timeframe: {
-            start: {
-              month: 11,
-              year: 2018,
+        ],
+      },
+      {
+        title: "Open Source Contribution",
+        content: [
+          {
+            title: "OpenEar (Founder)",
+            subtitle: "Ear training app for musicians",
+            timeframe: {
+              start: {
+                month: 11,
+                year: 2021,
+              },
+              end: "present",
             },
-            end: {
-              month: 11,
-              year: 2019,
-            },
+            content: [
+              <>
+                Envisioned, created and maintained the OpenEar open-source ear
+                training app, which current has more then 3.5K active users</>,
+            ],
           },
-          content: [
-            <>
-              Helped rebuilt a generic OOH-Planning platform from scratch in a
-              team of two developers.
-            </>,
-            <>
-              Transformed and maintained a self-managed DSP solution to a
-              generic branded “CPG-Retailer” platform, after acquisition by
-              Quotient Technology Inc
-            </>,
-          ],
-        },
-      ],
-    },
-    {
-      title: "Open Source Contribution",
-      content: [
-        {
-          title: "OpenEar (Founder)",
-          subtitle: "Ear training app for musicians",
-          timeframe: {
-            start: {
-              month: 11,
-              year: 2021,
+          {
+            title: "Reactive Forms (Contribution)",
+            subtitle: "A library for Angular forms",
+            timeframe: {
+              month: 10,
+              year: 2010,
             },
-            end: "present",
+            content: [
+              <>
+                Improved type definition for forms for the ngneat/react-forms
+                repo (50 Forks in 590 stars)
+              </>,
+            ],
           },
-          content: [
-            <>
-              Envisioned, created and maintained the OpenEar open-source ear
-              training app, using Angular with ionic.
-            </>,
-            <>
-              Available on Google Play and App Store, with more then 3.5K active
-              users
-            </>,
-            <>
-              This app enables users to practice difference musical pattern
-              recognition skills, which in turn helps in musical development.
-            </>,
-            <>
-              This app has a polymorphic architecture that uses Function
-              Programming principles to make it easy to expand it with more
-              exercises, while reusing similar behaviors and a common exercise
-              engine.
-            </>,
-            <>Check out code at: https://github.com/ShacharHarshuv/open-ear</>,
-            <>
-              Also created a complimentary tool to help add songs to the chord
-              progression data base of the app, using react and Material UI.
-              Available in:
-              https://github.com/ShacharHarshuv/openear-progressions-transcriber
-            </>,
-          ],
-        },
-        {
-          title: "Reactive Forms",
-          subtitle: "A library for Angular forms",
-          timeframe: {
-            month: 10,
-            year: 2010,
+        ],
+      },
+    ],
+    [
+      {
+        title: "Education",
+        content: [
+          {
+            title: "B.A. in Computer Science",
+            subtitle: "University of Haifa",
+            timeframe: {
+              start: {
+                month: 6,
+                year: 2014,
+              },
+              end: {
+                month: 8,
+                year: 2018,
+              },
+            },
+            content: [
+              <>
+                An accelerated program for talented youth, in
+                parallel to High School.
+              </>,
+              <>Final average 89/100, without taking any test twice.</>,
+            ],
           },
-          content: [
-            <>
-              Improved type definition for forms for the ngneat/react-forms repo
-              (50 Forks in 590 stars)
-            </>,
-            <>PR available on github.com/ngneat/reactive-forms/pull/35</>,
-          ],
-        },
-      ],
-    },
-    {
-      title: "Formal education",
-      content: [
-        {
-          title: "B.A. in Computer Science",
-          subtitle: "University of Haifa",
-          timeframe: {
-            start: {
-              month: 6,
-              year: 2014,
+          {
+            title: "The Program for Talented Youth in Math",
+            subtitle: "Bar-Ilan University, Tel-Aviv",
+            timeframe: {
+              start: {
+                month: 9,
+                year: 2012,
+              },
+              end: {
+                month: 7,
+                year: 2015,
+              },
             },
-            end: {
-              month: 8,
-              year: 2018,
-            },
+            content: [
+              <>
+                Special nation-wide program for talented youth in math (only
+                about 30 students from the city of Haifa)
+              </>,
+            ],
           },
-          content: [
-            <>
-              Studied in an accelerated program for talented youth, in parallel
-              to High School studied. Graduated one year after High School.
-            </>,
-            <>Final average 89/100, without taking any test twice.</>,
-          ],
-        },
-        {
-          title: "The Program for Talented Youth in Math",
-          subtitle: "Bar-Ilan University, Tel-Aviv",
-          timeframe: {
-            start: {
-              month: 9,
-              year: 2012,
+          {
+            title: "High School",
+            subtitle: "The Hebrew Reali School in Haifa",
+            timeframe: {
+              start: {
+                month: 9,
+                year: 2014,
+              },
+              end: {
+                month: 7,
+                year: 2017,
+              },
             },
-            end: {
-              month: 7,
-              year: 2015,
-            },
-          },
-          content: [
-            <>
-              Special nation-wide program for talented youth in math (only about
-              30 students from the city of Haifa)
-            </>,
-            <>
-              Finish High-School math finals in the 10th grade (two years early)
-            </>,
-          ],
-        },
-        {
-          title: "High School",
-          subtitle: "The Hebrew Reali School in Haifa",
-          timeframe: {
-            start: {
-              month: 9,
-              year: 2014,
-            },
-            end: {
-              month: 7,
-              year: 2017,
-            },
-          },
-          content: [
+            content: [
             <>Final average for national High School exams (Bagrut): 93</>,
             <>
               Highest-level grouping in the following classes: Math (99),
               English (97), Art (96), Arabic (95), Music (96)
             </>,
-          ],
-        },
-      ],
-    },
-    {
-      title: "Technologies",
-      content: [
-        "React",
-        "Angular",
-        "TypeScript",
-        "GraphQL",
-        "MongoDB",
-        "RxJS",
-        "HTML",
-        "SCSS",
-        "Tailwindcss",
-        "styled-components",
-        "Formik",
-        "nodejs",
-        "Ionic",
-        "MongoDB",
-      ],
-    },
-    // {
-    //   title: "languages",
-    //   content: [], // todo: think if we want this
-    // },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Skills",
+        content: [
+          "React",
+          "Angular",
+          "TypeScript",
+          "GraphQL",
+          "MongoDB",
+          "RxJS",
+          "Javascript",
+          "HTML",
+          "SCSS",
+          "Tailwindcss",
+          "styled-components",
+          "Formik",
+          "nodejs",
+          "Ionic",
+          "MongoDB",
+        ],
+        keywords: ["Full Stack", "back end", "back-end", "REST APIs", "javascript", "web development", "web design", "php", ".net", "API", "APIs", "REST", "design", "mysql", "angular js", "front end web", "computer science", "cs", "C.S.", "B.A.", "Bachelor's Degree", "Web Application", "web app", "web architecture", "architect", "system architecture", "software architecture", "languages", "programming", "coding", "node", "node.js", "nodejs", "react", "angular", "nextjs", "typescript", "graphql", "rxjs", "mongodb", "tailwindcss", "tailwind", "CSS", "Ruby", "Java", "python", "oracle", "front end languages", "programming languages", "project management skills", "attention to detail", "management skills", "organizational skills", "problem solving skills", "scrum", "agile", "scrum master", "excellent verbal communication", "designing", "2+", "3+", "4+", "5", "5+", "6", "years of experience", "user experience", "UX", "developer experience", "DX", "customer support", "relational databases", "databases", "DB", "SQL", "full-stack web development", "leadership", "mentorship", "collaborative", "highly motivated", "technical skills", "entrepreneurial spirit"]
+      },
+      // {
+      //   title: "languages",
+      //   content: [], // todo: think if we want this
+      // },
+    ],
   ],
 };

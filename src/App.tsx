@@ -13,13 +13,14 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Section } from "./components/Section";
 import { designUnit } from "./utility/designUnit";
 import { primary, lightBg } from "./palette";
+import { Keywords } from './components/Keywords';
 
 const Body = styled.div``;
 
 const Panel = styled.div<{ color?: string; foreground?: string }>`
   background-color: ${(props) => props.color || "white"};
   color: ${(props) => props.foreground || "black"};
-  padding: ${designUnit(4)} ${designUnit(8)};
+  padding: ${designUnit(4)} ${designUnit(11)};
 `;
 
 const Title = styled.h1`
@@ -32,6 +33,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-weight: normal;
   margin-top: 0rem;
+  margin-bottom: 0;
 `;
 const ContactInfoText = styled.span``;
 
@@ -58,6 +60,7 @@ function App() {
       <Panel color={lightBg}>
         <Title>{content.name}</Title>
         <Subtitle>{content.title}</Subtitle>
+        <Keywords>{content.keywords}</Keywords>
         {content.about}
       </Panel>
       <Panel color={primary} foreground={"white"}>
@@ -71,9 +74,24 @@ function App() {
         </Stack>
       </Panel>
       <Panel>
-        {content.sections.map((section, index) => (
-          <Section key={index} {...section} />
-        ))}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "5em",
+          }}
+        >
+          <div>
+            {content.columns[0].map((section, index) => (
+              <Section key={index} {...section} />
+            ))}
+          </div>
+          <div>
+            {content.columns[1].map((section, index) => (
+              <Section key={index} {...section} />
+            ))}
+          </div>
+        </div>
       </Panel>
     </Body>
   );
