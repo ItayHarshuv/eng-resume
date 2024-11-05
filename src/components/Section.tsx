@@ -10,7 +10,7 @@ const SectionTitle = styled.h3`
   color: ${primary};
   font-weight: 500;
   font-size: 1.5rem;
-  margin: 1rem 0;
+  margin: 1.2rem 0;
 `;
 
 export function Section(section: SectionType) {

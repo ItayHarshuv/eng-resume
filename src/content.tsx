@@ -40,11 +40,7 @@ export const content: {
   about: (
     <>
       <p>
-        After graduating a talented youth program with a B.A. in Computer Science at age of 19, Clay has had 6 years of experience in the Front-End world with different technologies including React, Angular,
-        TypeScript, GraphQL and others. He loves the web and finding ways to improve DX and streamline productivity.
-        As a tech-lead, he's managed SCRUM teams, led architectural designs and development for client-side web
-        applications, as well as mentored and reviewed work by junior
-        developers.
+        Graduated from a talented youth program with a B.A. in Computer Science at the age of 19. Brings 6 years of experience in various web technologies, with a passion for enhancing Developer Experience (DX) and streamlining productivity.
       </p>
       {/*<p>*/}
       {/*  He loves innovating and finding better ways to solve problems, emphasizing*/}
