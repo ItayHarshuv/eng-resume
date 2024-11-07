@@ -20,15 +20,15 @@ const Body = styled.div``;
 const Panel = styled.div<{ color?: string; foreground?: string }>`
   background-color: ${(props) => props.color || "white"};
   color: ${(props) => props.foreground || "black"};
-  padding: ${designUnit(4)} ${designUnit(11)};
+  padding: ${designUnit(3)} ${designUnit(11)};
 `;
 
 const Title = styled.h1`
   color: ${primary};
   font-weight: normal;
   font-size: 2.2rem;
-  margin-top: 1rem;
-  margin-bottom: 0.7rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.4rem;
 `;
 const Subtitle = styled.h2`
   font-weight: normal;

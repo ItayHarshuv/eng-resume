@@ -46,7 +46,9 @@ function SectionItem(item: Entry) {
     <>
       <Title>{item.title}</Title>
       <Subtitle>{item.subtitle}</Subtitle>
-      <Timeframe>{getTimeframeString(item.timeframe)}</Timeframe>
+      {
+        item.timeframe && <Timeframe>{getTimeframeString(item.timeframe)}</Timeframe>
+      }
       {content}
     </>
   );

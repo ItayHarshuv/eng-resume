@@ -5,7 +5,7 @@ import { primary } from "../palette";
 const Badge = styled.span`
   background-color: ${primary};
   color: white;
-  padding: 2px 0.7rem;
+  padding: 1px 0.6rem;
   border-radius: 4px;
 `;
 

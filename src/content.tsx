@@ -6,7 +6,7 @@ type Renderable = string | ReactElement;
 export type Entry = {
   title: string;
   subtitle: string;
-  timeframe:
+  timeframe?:
     | {
     start: Time;
     end: Time;
@@ -34,13 +34,13 @@ export const content: {
   };
   columns: [Section[], Section[]];
 } = {
-  name: "Clay Herzberg",
-  title: "Sr. Front-End Web Developer",
+  name: "Shahar Har-Shuv",
+  title: "Tech Front-End Web Developer at Neptune Retail Solutions",
   keywords: ["Full Stack Developer", "Senior", "Tech Lead", "Engineer"],
   about: (
     <>
       <p>
-        Graduated from a talented youth program with a B.A. in Computer Science at the age of 19. Brings 6 years of experience in various web technologies, with a passion for enhancing Developer Experience (DX) and streamlining productivity.
+        Graduated from a talented youth program with a B.A. in Computer Science at the age of 19. Brings 6 years of experience in various web technologies, with a passion for enhancing Developer Experience (DX) and streamlining productivity. Shahar is also the creator and maintainer open source ear training app "OpenEar" and Angular form library "formal".
       </p>
       {/*<p>*/}
       {/*  He loves innovating and finding better ways to solve problems, emphasizing*/}
@@ -65,7 +65,7 @@ export const content: {
     </>
   ),
   contact: {
-    email: "clay.herzberg@gmail.com",
+    email: "shahar.harshuv@gmail.com",
     phone: 3322519964,
     address: "New York City, USA",
     github: "ShacharHarshuv",
@@ -77,13 +77,13 @@ export const content: {
         content: [
           {
             title: "Front-End Developer",
-            subtitle: "Ubimo, A Quotient Brand",
+            subtitle: "Neptune Retail Solutions",
             timeframe: {
               start: {
                 month: 11,
                 year: 2018,
               },
-              end: 'present'
+              end: 'present',
             },
             content: [
               <>
@@ -104,13 +104,13 @@ export const content: {
                 large scale self-service DSP for running campaign on media
               </>,
               <>Worked closely with product managers and stakeholders</>,
-              <>Was part of two acquisitions</>
+              <>Was part of two acquisitions (former company names include "Ubimo" and "Quotient Technologies")</>,
             ],
           },
         ],
       },
       {
-        title: "Open Source Contribution",
+        title: "Open Source Contributions",
         content: [
           {
             title: "OpenEar (Founder)",
@@ -125,27 +125,45 @@ export const content: {
             content: [
               <>
                 Envisioned, created and maintained the OpenEar open-source ear
-                training app, which current has more then 3.5K active users</>,
+                training app, with thousands of active users and {'>'}100 stars on github</>,
             ],
           },
           {
-            title: "Reactive Forms (Contribution)",
-            subtitle: "A library for Angular forms",
-            timeframe: {
-              month: 10,
-              year: 2010,
-            },
+            title: "Formal (Founder)",
+            subtitle: "Next-generation form library for Angular",
             content: [
-              <>
-                Improved type definition for forms for the ngneat/react-forms
-                repo (50 Forks in 590 stars)
-              </>,
+              <>Designed and implemented revolutionary new form library, aimed at replacing existing industry standards. The library is current in beta and is under constant development.</>,
             ],
           },
         ],
       },
     ],
     [
+      {
+        title: "",
+        content: [
+          {
+            title: "Other Contributions",
+            subtitle: "",
+            timeframe: {
+              start: {
+                month: 10,
+                year: 2010,
+              },
+              end: 'present',
+            },
+            content: [
+              <>
+                Various DX improvements for TanStack's angular-query (42K starts and 3K forks)
+              </>,
+              <>
+                Improved type definition for forms for the ngneat/react-forms
+                repo (590 stars and 50 Forks)
+              </>,
+            ],
+          },
+        ],
+      },
       {
         title: "Education",
         content: [
@@ -204,11 +222,11 @@ export const content: {
               },
             },
             content: [
-            <>Final average for national High School exams (Bagrut): 93</>,
-            <>
-              Highest-level grouping in the following classes: Math (99),
-              English (97), Art (96), Arabic (95), Music (96)
-            </>,
+              <>Final average for national High School exams (Bagrut): 93</>,
+              <>
+                Highest-level grouping in the following classes: Math (99),
+                English (97), Art (96), Arabic (95), Music (96)
+              </>,
             ],
           },
         ],
@@ -232,7 +250,9 @@ export const content: {
           "Ionic",
           "MongoDB",
         ],
-        keywords: ["Full Stack", "back end", "back-end", "REST APIs", "javascript", "web development", "web design", "php", ".net", "API", "APIs", "REST", "design", "mysql", "angular js", "front end web", "computer science", "cs", "C.S.", "B.A.", "Bachelor's Degree", "Web Application", "web app", "web architecture", "architect", "system architecture", "software architecture", "languages", "programming", "coding", "node", "node.js", "nodejs", "react", "angular", "nextjs", "typescript", "graphql", "rxjs", "mongodb", "tailwindcss", "tailwind", "CSS", "Ruby", "Java", "python", "oracle", "front end languages", "programming languages", "project management skills", "attention to detail", "management skills", "organizational skills", "problem solving skills", "scrum", "agile", "scrum master", "excellent verbal communication", "designing", "2+", "3+", "4+", "5", "5+", "6", "years of experience", "user experience", "UX", "developer experience", "DX", "customer support", "relational databases", "databases", "DB", "SQL", "full-stack web development", "leadership", "mentorship", "collaborative", "highly motivated", "technical skills", "entrepreneurial spirit"]
+        keywords: ["Full Stack", "back end", "back-end", "REST APIs", "javascript", "web development", "web design", "php", ".net", "API", "APIs", "REST", "design", "mysql", "angular js", "front end web", "computer science", "cs", "C.S.", "B.A.", "Bachelor's Degree", "Web Application", "web app", "web architecture", "architect", "system architecture", "software architecture", "languages", "programming", "coding", "node", "node.js", "nodejs", "react", "angular", "nextjs", "typescript", "graphql",
+          "rxjs", "mongodb", "tailwindcss", "tailwind", "CSS", "Ruby", "Java", "python", "oracle", "front end languages", "programming languages", "project management skills", "attention to detail", "management skills", "organizational skills", "problem solving skills", "scrum", "agile", "scrum master", "excellent verbal communication", "designing", "2+", "3+", "4+", "5", "5+", "6", "years of experience", "user experience", "UX", "developer experience", "DX", "customer support",
+          "relational databases", "databases", "DB", "SQL", "full-stack web development", "leadership", "mentorship", "collaborative", "highly motivated", "technical skills", "entrepreneurial spirit"],
       },
       // {
       //   title: "languages",
