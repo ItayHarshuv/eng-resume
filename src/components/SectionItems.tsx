@@ -44,11 +44,11 @@ function SectionItem(item: Entry) {
 
   return (
     <>
-      <Title>{item.title}</Title>
-      <Subtitle>{item.subtitle}</Subtitle>
-      {
-        item.timeframe && <Timeframe>{getTimeframeString(item.timeframe)}</Timeframe>
-      }
+      {item.title && <Title>{item.title}</Title>}
+      {item.subtitle && <Subtitle>{item.subtitle}</Subtitle>}
+      {item.timeframe && (
+        <Timeframe>{getTimeframeString(item.timeframe)}</Timeframe>
+      )}
       {content}
     </>
   );

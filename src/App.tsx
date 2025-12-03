@@ -40,9 +40,9 @@ const ContactInfoText = styled.span``;
 function formatPhone(phone: number): string {
   const phoneStr = phone.toString();
   const areaCode = phoneStr.slice(0, 3);
-  const prefix = phoneStr.slice(3, 6);
-  const lineNumber = phoneStr.slice(6, 10);
-  return `(${areaCode}) ${prefix}-${lineNumber}`;
+  const prefix = phoneStr.slice(3, 5);
+  const lineNumber = phoneStr.slice(5, 12);
+  return `+${areaCode} ${prefix}-${lineNumber}`;
 }
 
 function ContactInfo(props: { icon: IconDefinition; children: string }) {
@@ -81,14 +81,32 @@ function App() {
             gap: "5em",
           }}
         >
-          <div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {content.columns[0].map((section, index) => (
-              <Section key={index} {...section} />
+              <div
+                key={index}
+                style={
+                  index === content.columns[0].length - 1
+                    ? { marginTop: "auto" }
+                    : undefined
+                }
+              >
+                <Section {...section} />
+              </div>
             ))}
           </div>
-          <div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {content.columns[1].map((section, index) => (
-              <Section key={index} {...section} />
+              <div
+                key={index}
+                style={
+                  index === content.columns[1].length - 1
+                    ? { marginTop: "auto" }
+                    : undefined
+                }
+              >
+                <Section {...section} />
+              </div>
             ))}
           </div>
         </div>

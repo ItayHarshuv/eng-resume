@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { LanguageRow } from "./components/LanguageProficiency";
 import { Time } from "./utility/time";
 
 type Renderable = string | ReactElement;
@@ -34,13 +35,17 @@ export const content: {
   };
   columns: [Section[], Section[]];
 } = {
-  name: "Shahar Har-Shuv",
-  title: "Tech Front-End Web Developer at Neptune Retail Solutions",
-  keywords: ["Full Stack Developer", "Senior", "Tech Lead", "Engineer"],
+  name: "Itay Har-Shuv",
+  title: "Full-Stack Developer Mobile & Web Apps",
+  keywords: ["Full Stack Developer", "Engineer"],
   about: (
     <>
       <p>
-        Graduated from a talented youth program with a B.A. in Computer Science at the age of 19. Brings 6 years of experience in various web technologies, with a passion for enhancing Developer Experience (DX) and streamlining productivity. Shahar is also the creator and maintainer open source ear training app "OpenEar" and Angular form library "formal".
+        Computer Science B.Sc. graduate at the age of 19 and a Full-Stack Developer 
+        with strong foundations in software design. Built a cross-platform research app 
+        (iOS & Android) and contributed to open-source Angular projects. 
+        Skilled in modern technologies and passionate about creating scalable,
+        user-focused software solutions.
       </p>
       {/*<p>*/}
       {/*  He loves innovating and finding better ways to solve problems, emphasizing*/}
@@ -65,119 +70,27 @@ export const content: {
     </>
   ),
   contact: {
-    email: "shahar.harshuv@gmail.com",
-    phone: 3322519964,
-    address: "New York City, USA",
-    github: "ShacharHarshuv",
+    email: "itay.hsh@gmail.com",
+    phone: +972549985398,
+    address: "European Union",
+    github: "ItayHarshuv",
   },
   columns: [
     [
       {
-        title: "Work experience",
-        content: [
-          {
-            title: "Front-End Developer",
-            subtitle: "Neptune Retail Solutions",
-            timeframe: {
-              start: {
-                month: 11,
-                year: 2018,
-              },
-              end: 'present',
-            },
-            content: [
-              <>
-                Led the development of client-side web applications using ever-evolving modern
-                Web technology.
-              </>,
-              <>
-                Relocated from Tel-Aviv to help integrate the New York City
-                system into the main platform.
-              </>,
-              <>
-                Developed various generic development tools to increase team
-                productivity and code stability
-              </>,
-              <>
-                Helped rebuilt a generic OOH-Planning platform from scratch in a
-                team of two developers as well as maintaining and enhancing a
-                large scale self-service DSP for running campaign on media
-              </>,
-              <>Worked closely with product managers and stakeholders</>,
-              <>Was part of two acquisitions (former company names include "Ubimo" and "Quotient Technologies")</>,
-            ],
-          },
-        ],
-      },
-      {
-        title: "Open Source Contributions",
-        content: [
-          {
-            title: "OpenEar (Founder)",
-            subtitle: "Ear training app for musicians",
-            timeframe: {
-              start: {
-                month: 11,
-                year: 2021,
-              },
-              end: "present",
-            },
-            content: [
-              <>
-                Envisioned, created and maintained the OpenEar open-source ear
-                training app, with thousands of active users and {'>'}100 stars on github</>,
-            ],
-          },
-          {
-            title: "Formal (Founder)",
-            subtitle: "Next-generation form library for Angular",
-            content: [
-              <>Designed and implemented revolutionary new form library, aimed at replacing existing industry standards. The library is current in beta and is under constant development.</>,
-            ],
-          },
-        ],
-      },
-    ],
-    [
-      {
-        title: "",
-        content: [
-          {
-            title: "Other Contributions",
-            subtitle: "",
-            timeframe: {
-              start: {
-                month: 10,
-                year: 2010,
-              },
-              end: 'present',
-            },
-            content: [
-              <>
-                Various DX improvements for TanStack's angular-query (42K starts and 3K forks)
-              </>,
-              <>
-                Improved type definition for forms for the ngneat/react-forms
-                repo (590 stars and 50 Forks)
-              </>,
-            ],
-          },
-        ],
-      },
-      {
         title: "Education",
         content: [
           {
-            title: "B.A. in Computer Science",
+            title: "B.Sc. in Computer Science",
             subtitle: "University of Haifa",
             timeframe: {
               start: {
                 month: 6,
-                year: 2014,
+                year: 2018,
               },
               end: {
-                month: 8,
-                year: 2018,
+                month: 9,
+                year: 2021,
               },
             },
             content: [
@@ -185,48 +98,38 @@ export const content: {
                 An accelerated program for talented youth, in
                 parallel to High School.
               </>,
-              <>Final average 89/100, without taking any test twice.</>,
+              <>Final average 90/100</>,
             ],
           },
+        ],
+      },
+      {
+        title: "Work experience",
+        content: [
           {
-            title: "The Program for Talented Youth in Math",
-            subtitle: "Bar-Ilan University, Tel-Aviv",
+            title: "Full-Stack Developer",
+            subtitle: "Ben-Gurion University of the Negev",
             timeframe: {
               start: {
-                month: 9,
-                year: 2012,
+                month: 1,
+                year: 2023,
               },
-              end: {
-                month: 7,
-                year: 2015,
-              },
+              end: 'present',
             },
             content: [
               <>
-                Special nation-wide program for talented youth in math (only
-                about 30 students from the city of Haifa)
+                Built and launched a cross-platform (iOS & Android) research app for 40+ participants, improving data-collection efficiency and accuracy.
               </>,
-            ],
-          },
-          {
-            title: "High School",
-            subtitle: "The Hebrew Reali School in Haifa",
-            timeframe: {
-              start: {
-                month: 9,
-                year: 2014,
-              },
-              end: {
-                month: 7,
-                year: 2017,
-              },
-            },
-            content: [
-              <>Final average for national High School exams (Bagrut): 93</>,
               <>
-                Highest-level grouping in the following classes: Math (99),
-                English (97), Art (96), Arabic (95), Music (96)
+                Designed a scalable backend using Node.js, TypeScript, MongoDB, REST APIs, handling 100K+ data entries with smooth frontend performance.
               </>,
+              <>
+                Developed an accessible Angular UI with 0% user complaints through close collaboration with the research group.
+
+              </>,
+              <>Integrating AI tools (Cursor, ChatGPT) resulting 3X faster development.</>,
+              <>Reduced maintenance time by implementing component-based UI, clean code standards, and a Git workflow, enabling updates in &lt; 1 hour.</>,
+              <>Expanded expertise through self-study of React Native, focusing on cross-platform UI and mobile deployment principles.</>,
             ],
           },
         ],
@@ -236,28 +139,127 @@ export const content: {
         content: [
           "React",
           "Angular",
+          "HTML5",
+          "CSS3",
+          "Node.js",
+          "Express.js",
+          "REST API",
+          "MongoDB",
+          "JavaScript",
           "TypeScript",
-          "GraphQL",
-          "MongoDB",
-          "RxJS",
-          "Javascript",
-          "HTML",
-          "SCSS",
-          "Tailwindcss",
-          "styled-components",
-          "Formik",
-          "nodejs",
-          "Ionic",
-          "MongoDB",
+          "Java",
+          "C#",
+          "Python",
+          "C++",
+          "Git",
+          "Firebase",
         ],
-        keywords: ["Full Stack", "back end", "back-end", "REST APIs", "javascript", "web development", "web design", "php", ".net", "API", "APIs", "REST", "design", "mysql", "angular js", "front end web", "computer science", "cs", "C.S.", "B.A.", "Bachelor's Degree", "Web Application", "web app", "web architecture", "architect", "system architecture", "software architecture", "languages", "programming", "coding", "node", "node.js", "nodejs", "react", "angular", "nextjs", "typescript", "graphql",
-          "rxjs", "mongodb", "tailwindcss", "tailwind", "CSS", "Ruby", "Java", "python", "oracle", "front end languages", "programming languages", "project management skills", "attention to detail", "management skills", "organizational skills", "problem solving skills", "scrum", "agile", "scrum master", "excellent verbal communication", "designing", "2+", "3+", "4+", "5", "5+", "6", "years of experience", "user experience", "UX", "developer experience", "DX", "customer support",
-          "relational databases", "databases", "DB", "SQL", "full-stack web development", "leadership", "mentorship", "collaborative", "highly motivated", "technical skills", "entrepreneurial spirit"],
+        keywords: ["Full-Stack Development", "Frontend Development", "Backend Development", "Web Development", "REST API", "API Design", "GraphQL", "JavaScript", "TypeScript", "React", "Angular", "Next.js", "Node.js", "Express.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "MongoDB", "MySQL", 
+                    "PostgreSQL", "SQLite", "Redis", "Firebase", "Git", "GitHub", "Docker", "CI/CD", "Agile", "Scrum", "Project Management", "Problem Solving", "Team Collaboration", "Communication", "Leadership", "Mentorship", "Time Management", "Debugging", "Testing", "Unit Testing", 
+                    "Integration Testing", "End-to-End Testing", "Test-Driven Development", "Code Reviews", "Performance Optimization", "Responsive Design", "Accessibility (a11y)", "Version Control", "Software Architecture", "System Design", "Data Modeling", "Database Design", "CRUD Operations", 
+                    "DevOps", "Cloud Computing", "AWS", "Azure", "Google Cloud", "Kubernetes", "Serverless Computing", "Microservices", "Security", "DevSecOps", "Machine Learning", "Artificial Intelligence", "Data Engineering", "Data Visualization", "Big Data", "Event-Driven Architecture", "Message Queues","1+","2+","3+","4+","5+",
+                    "Kafka", "RabbitMQ", "Build Automation", "Webpack", "Vite", "Prisma", "ORM", "NPM", "Command Line", "Linux", "Postman", "Swagger", "Jest", "Cypress", "Mocha", "Vercel", "Netlify", "Heroku", "DigitalOcean", "Performance Monitoring", "Clean Code", "Team Player", "Self-Learner", "Entrepreneurial Spirit", "Bachelor’s Degree", "Computer Science", "Programming", "Python", "Java", "C#", "C++", "Go", "Rust", "SQL", "NoSQL"
+                  ],
       },
-      // {
-      //   title: "languages",
-      //   content: [], // todo: think if we want this
-      // },
+    ],
+    [
+      {
+        title: "Open Source Contributions",
+        content: [
+          {
+            title: "OpenEar",
+            subtitle: "Ear training app for musicians",
+            timeframe: {
+              start: {
+                month: 11,
+                year: 2022,
+              },
+              end: "present",
+            },
+            content: [
+              <>
+                Collaborate via GitHub workflows (PRs, branching, code reviews) to improve UI performance and documentation.
+              </>,
+              <>
+                Applied responsive design and Angular best practices for scalable, user-friendly interfaces.
+              </>,
+            ],
+          },
+        ],
+      },
+      {
+        title: "Personal Projects",
+        content: [
+          {
+            title: "University Projects",
+            subtitle: "3D game with Unity and C#",
+            timeframe: {
+              start: {
+                month: 10,
+                year: 2020,
+              },
+              end: {
+                month: 9,
+                year: 2021,
+              }
+            },
+            content: [
+              <>
+                Created a 3D educational game in Unity (C#) featuring physics-based interactions and intuitive UI.
+              </>,
+              <>
+                Applied object-oriented programming principles (C++) in coursework, designing reusable class structures and efficient algorithms for problem-solving.  
+              </>
+            ],
+          },
+          {
+            title: "High-School Final Project",
+            subtitle: "Machine-learning model in Python",
+            timeframe: {
+              start: {
+                month: 9,
+                year: 2019,
+              },
+              end: {
+                month: 6,
+                year: 2020,
+              }
+            },
+            content: [
+              <>
+                Built a machine-learning model (Python) to predict mushroom edibility using train-test split, preprocessing, and feature engineering.
+              </>,
+            ],
+          },
+          
+        ]
+      },
+      {
+        title: "Languages",
+        content: [
+          {
+            title: "",
+            subtitle: "",
+            content: <LanguageRow name="English" level={5} />,
+          },
+          {
+            title: "",
+            subtitle: "",
+            content: <LanguageRow name="Spanish" level={4} />,
+          },
+          {
+            title: "",
+            subtitle: "",
+            content: <LanguageRow name="German" level={2} />,
+          },
+          {
+            title: "",
+            subtitle: "",
+            content: <LanguageRow name="Hebrew" level={5} />,
+          },
+        ],
+      },
+      
     ],
   ],
 };
